@@ -1,0 +1,214 @@
+{
+  "name": "JM IGF",
+  "notes": "80s-flavoured soft rock (2020s): Deluxe Reverb with Dumble-style ST SINGER, light Ross comp, CE-1 chorus. Solo scene: vintage Japanese fuzz into a cranked small Fender, approximated with RED FUZZ (low tone) -> TWEEDY -> TWEED 112 and a honky ~1 kHz EQ. SCN1 rhythm, SCN2 fuzz solo, SCN3 intro.",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": false
+    },
+    "CMP": {
+      "model": "ROSE COMP",
+      "on": true,
+      "params": {
+        "SUSTAIN": 30,
+        "LEVEL": 60
+      }
+    },
+    "EFX": {
+      "model": "ST SINGER",
+      "on": true,
+      "params": {
+        "VOLUME": 55,
+        "GAIN": 20,
+        "FILTER": 60
+      }
+    },
+    "AMP": {
+      "model": "DELUXE RVB",
+      "on": true,
+      "params": {
+        "GAIN": 35,
+        "LEVEL": 70,
+        "BASS": 45,
+        "MIDDLE": 55,
+        "TREB": 60
+      }
+    },
+    "IR": {
+      "model": "BLACK 112",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "80hz",
+        "HIGH_CUT": "7.5khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": false
+    },
+    "MOD": {
+      "model": "CE-1",
+      "on": true,
+      "params": {
+        "INTEN": 25,
+        "DEPTH": 30,
+        "RATE": 15
+      }
+    },
+    "DLY": {
+      "model": "ANALOG DELAY",
+      "on": false,
+      "params": {
+        "RATE": 45,
+        "ECHO": 20,
+        "INTEN": 22
+      }
+    },
+    "RVB": {
+      "model": "SPRING",
+      "on": true,
+      "params": {
+        "DECAY": 45,
+        "LEVEL": 25
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "CMP": {
+          "model": "ROSE COMP",
+          "on": false
+        },
+        "EFX": {
+          "model": "RED FUZZ",
+          "on": true,
+          "params": {
+            "GAIN": 75,
+            "TONE": 35,
+            "OUTPUT": 60
+          }
+        },
+        "AMP": {
+          "model": "TWEEDY",
+          "on": true,
+          "params": {
+            "LEVEL": 70,
+            "TONE": 45,
+            "GAIN": 70
+          }
+        },
+        "IR": {
+          "model": "TWEED 112",
+          "on": true,
+          "params": {
+            "MIC": "SM57",
+            "LEVEL": "0db",
+            "LOW_CUT": "110hz",
+            "HIGH_CUT": "6khz"
+          }
+        },
+        "EQ": {
+          "model": "10-EQ",
+          "on": true,
+          "params": {
+            "VOL": "0db",
+            "31HZ": "-6db",
+            "62HZ": "-4db",
+            "125HZ": "-3db",
+            "250HZ": "-1db",
+            "500HZ": "+2db",
+            "1KHZ": "+4db",
+            "2KHZ": "+2db",
+            "4KHZ": "-2db",
+            "8KHZ": "-4db",
+            "16KHZ": "-6db",
+            "GAIN": "0db"
+          }
+        },
+        "MOD": {
+          "model": "CE-1",
+          "on": false
+        },
+        "DLY": {
+          "model": "ANALOG DELAY",
+          "on": true,
+          "params": {
+            "RATE": 45,
+            "ECHO": 18,
+            "INTEN": 20
+          }
+        },
+        "RVB": {
+          "model": "SPRING",
+          "on": true,
+          "params": {
+            "DECAY": 35,
+            "LEVEL": 18
+          }
+        },
+        "GATE": {
+          "model": "NR",
+          "on": true,
+          "params": {
+            "SENS": 30,
+            "DECAY": 50
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "EFX": {
+          "model": "ST SINGER",
+          "on": false
+        },
+        "MOD": {
+          "params": {
+            "INTEN": 35
+          }
+        },
+        "DLY": {
+          "model": "ANALOG DELAY",
+          "on": true,
+          "params": {
+            "RATE": 50,
+            "ECHO": 18,
+            "INTEN": 25
+          }
+        },
+        "RVB": {
+          "model": "HALL",
+          "on": true,
+          "params": {
+            "DECAY": 55,
+            "PRE.D": 30,
+            "LIVELINESS": 55,
+            "LEVEL": 28
+          }
+        }
+      }
+    }
+  }
+}

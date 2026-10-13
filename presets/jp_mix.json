@@ -1,0 +1,239 @@
+{
+  "name": "JP MIX",
+  "notes": "Prog metal multi-tone: SCN1 heavy 7-string rhythm (Rectifier, scooped), SCN2 early-90s Mark-style rhythm with chorus/delay, SCN3 lead.",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 45,
+        "DECAY": 25
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "T SCREAMER",
+      "on": true,
+      "params": {
+        "DRIVE": 0,
+        "TONE": 60,
+        "LEVEL": 95
+      }
+    },
+    "AMP": {
+      "model": "DUAL RECT",
+      "on": true,
+      "params": {
+        "GAIN": 75,
+        "PRES": 58,
+        "LEVEL": 72,
+        "BASS": 55,
+        "MIDDLE": 48,
+        "TREB": 62
+      }
+    },
+    "IR": {
+      "model": "RECT 412",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "100hz",
+        "HIGH_CUT": "7.5khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": true,
+      "params": {
+        "VOL": "0db",
+        "31HZ": "-4db",
+        "62HZ": "0db",
+        "125HZ": "+2db",
+        "250HZ": "-1db",
+        "500HZ": "-3db",
+        "1KHZ": "-1db",
+        "2KHZ": "+1db",
+        "4KHZ": "+2db",
+        "8KHZ": "0db",
+        "16KHZ": "-3db",
+        "GAIN": "0db"
+      }
+    },
+    "MOD": {
+      "model": "ST.CHORUS",
+      "on": false
+    },
+    "DLY": {
+      "model": "DIGI DELAY",
+      "on": false,
+      "params": {
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "ROOM",
+      "on": true,
+      "params": {
+        "DECAY": 25,
+        "TONE": 50,
+        "LEVEL": 12
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "GATE": {
+          "model": "NR",
+          "on": true,
+          "params": {
+            "SENS": 35,
+            "DECAY": 40
+          }
+        },
+        "CMP": {
+          "model": "RED COMP",
+          "on": false
+        },
+        "EFX": {
+          "model": "T SCREAMER",
+          "on": true,
+          "params": {
+            "DRIVE": 10,
+            "TONE": 55,
+            "LEVEL": 85
+          }
+        },
+        "AMP": {
+          "model": "DUAL RECT",
+          "on": true,
+          "params": {
+            "GAIN": 62,
+            "PRES": 55,
+            "LEVEL": 72,
+            "BASS": 45,
+            "MIDDLE": 62,
+            "TREB": 60
+          }
+        },
+        "IR": {
+          "model": "RECT 412",
+          "on": true,
+          "params": {
+            "MIC": "SM57",
+            "LEVEL": "0db",
+            "LOW_CUT": "80hz",
+            "HIGH_CUT": "8khz"
+          }
+        },
+        "EQ": {
+          "model": "10-EQ",
+          "on": true,
+          "params": {
+            "VOL": "0db",
+            "31HZ": "-2db",
+            "62HZ": "+1db",
+            "125HZ": "+2db",
+            "250HZ": "0db",
+            "500HZ": "-2db",
+            "1KHZ": "-1db",
+            "2KHZ": "+1db",
+            "4KHZ": "+2db",
+            "8KHZ": "0db",
+            "16KHZ": "-2db",
+            "GAIN": "0db"
+          }
+        },
+        "MOD": {
+          "model": "ST.CHORUS",
+          "on": true,
+          "params": {
+            "INTEN": 25,
+            "WIDTH": 40,
+            "RATE": 30
+          }
+        },
+        "DLY": {
+          "model": "DIGI DELAY",
+          "on": true,
+          "params": {
+            "E.LEVEL": 22,
+            "F.BACK": 28,
+            "D.TIME": 55,
+            "SUBDIV": "1/4"
+          }
+        },
+        "RVB": {
+          "model": "HALL",
+          "on": true,
+          "params": {
+            "DECAY": 40,
+            "PRE.D": 25,
+            "LIVELINESS": 50,
+            "LEVEL": 18
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "AMP": {
+          "params": {
+            "GAIN": 80,
+            "MIDDLE": 58,
+            "LEVEL": 76
+          }
+        },
+        "GATE": {
+          "params": {
+            "SENS": 35,
+            "DECAY": 45
+          }
+        },
+        "DLY": {
+          "model": "DIGI DELAY",
+          "on": true,
+          "params": {
+            "E.LEVEL": 28,
+            "F.BACK": 32,
+            "D.TIME": 55,
+            "SUBDIV": "1/4"
+          }
+        },
+        "RVB": {
+          "model": "HALL",
+          "on": true,
+          "params": {
+            "DECAY": 45,
+            "PRE.D": 25,
+            "LIVELINESS": 50,
+            "LEVEL": 20
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,140 @@
+{
+  "name": "SRV SE",
+  "notes": "Thick, gritty Texas shuffle: Dumble-style ST SINGER in the CMP slot for grit, TS808 for leads, TWIN RVB blackface platform, spring. Strat in Eb, neck or pos 4. SCN1 rhythm, SCN2 solo, SCN3 intro.",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 15,
+        "DECAY": 70
+      }
+    },
+    "CMP": {
+      "as": "EFX",
+      "model": "ST SINGER",
+      "on": true,
+      "params": {
+        "VOLUME": 60,
+        "GAIN": 35,
+        "FILTER": 55
+      }
+    },
+    "EFX": {
+      "model": "T SCREAMER",
+      "on": false,
+      "params": {
+        "DRIVE": 25,
+        "TONE": 60,
+        "LEVEL": 85
+      }
+    },
+    "AMP": {
+      "model": "TWIN RVB",
+      "on": true,
+      "params": {
+        "GAIN": 45,
+        "BRIGHT": 0,
+        "LEVEL": 75,
+        "BASS": 50,
+        "MIDDLE": 62,
+        "TREB": 58
+      }
+    },
+    "IR": {
+      "model": "TWIN 212",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "80hz",
+        "HIGH_CUT": "7khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": false
+    },
+    "MOD": {
+      "model": "U-VIBE",
+      "on": false
+    },
+    "DLY": {
+      "model": "ANALOG DELAY",
+      "on": false
+    },
+    "RVB": {
+      "model": "SPRING",
+      "on": true,
+      "params": {
+        "DECAY": 40,
+        "LEVEL": 22
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "CMP": {
+          "params": {
+            "GAIN": 40
+          }
+        },
+        "EFX": {
+          "model": "T SCREAMER",
+          "on": true,
+          "params": {
+            "DRIVE": 25,
+            "TONE": 60,
+            "LEVEL": 85
+          }
+        },
+        "AMP": {
+          "params": {
+            "LEVEL": 80,
+            "MIDDLE": 65
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "CMP": {
+          "as": "EFX",
+          "model": "ST SINGER",
+          "on": false
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 40
+          }
+        },
+        "RVB": {
+          "params": {
+            "DECAY": 45,
+            "LEVEL": 26
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "name": "EVH PN (NAM)",
+  "notes": "Early-80s 'brown sound' hard rock: cranked 1968 Marshall Super Lead (NAM), RC BST push, detune spread, tape echo, plate. Needs the TONE3000 capture '1968 Marshall Super Lead 12 000 Series Drive A2' (AmalgamAudio, A2-Lite, full rig: IR off) in NAM slot 5 - https://www.tone3000.com/tones/1968-marshall-super-lead-12-000-series-drive-a2-72145 . Bridge humbucker. SCN1 rhythm, SCN2 solo, SCN3 intro.",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 20,
+        "DECAY": 60
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "RC BST",
+      "on": true,
+      "params": {
+        "GAIN": 35,
+        "VOL": 55,
+        "BASS": 45,
+        "TREBLE": 62
+      }
+    },
+    "AMP": {
+      "model": "NAM 5",
+      "on": true,
+      "params": {
+        "GAIN": 60,
+        "BASS": 50,
+        "MIDDLE": 55,
+        "TREB": 58,
+        "MASTER": 30
+      }
+    },
+    "IR": {
+      "model": "GREEN 412",
+      "on": false
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": false
+    },
+    "MOD": {
+      "model": "DETUNE",
+      "on": true,
+      "params": {
+        "SHIFT-L": 45,
+        "SHIFT-R": 55,
+        "MIX": 25
+      }
+    },
+    "DLY": {
+      "model": "TAPE ECHO",
+      "on": true,
+      "params": {
+        "TIME": 40,
+        "LEVEL": 8,
+        "REPEAT": 10,
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "PLATE",
+      "on": true,
+      "params": {
+        "DECAY": 35,
+        "LEVEL": 18
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "EFX": {
+          "params": {
+            "GAIN": 48,
+            "VOL": 60
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 66,
+            "MIDDLE": 60
+          }
+        },
+        "DLY": {
+          "params": {
+            "TIME": 45,
+            "LEVEL": 14,
+            "REPEAT": 15
+          }
+        },
+        "RVB": {
+          "params": {
+            "DECAY": 40,
+            "LEVEL": 22
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "EFX": {
+          "model": "RC BST",
+          "on": false
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 45
+          }
+        },
+        "DLY": {
+          "params": {
+            "TIME": 45,
+            "LEVEL": 12,
+            "REPEAT": 15
+          }
+        },
+        "RVB": {
+          "params": {
+            "DECAY": 45,
+            "LEVEL": 24
+          }
+        }
+      }
+    }
+  }
+}

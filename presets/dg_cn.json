@@ -1,0 +1,196 @@
+{
+  "name": "DG CN",
+  "notes": "Late-70s prog anthem lead: Dyna-Comp style compressor -> Big Muff -> Hiwatt DR103 -> 4x12, chorus on cleans, digital delay, big hall. Solo scene swaps the comp for an RC BST into the Muff. Gate stays first. SCN1 rhythm, SCN2 solo, SCN3 intro.",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 15,
+        "DECAY": 70
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": true,
+      "params": {
+        "OUTPUT": 65,
+        "SENSITIVITY": 45
+      }
+    },
+    "EFX": {
+      "model": "MUF DIST",
+      "on": false,
+      "params": {
+        "VOLUME": 60,
+        "TONE": 45,
+        "SUSTAIN": 70
+      }
+    },
+    "AMP": {
+      "model": "HIWIRE",
+      "on": true,
+      "params": {
+        "GAIN": 38,
+        "PRES": 50,
+        "LEVEL": 75,
+        "BASS": 55,
+        "MIDDLE": 55,
+        "TREB": 60
+      }
+    },
+    "IR": {
+      "model": "CUSTOM 412",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "90hz",
+        "HIGH_CUT": "7.5khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": false
+    },
+    "MOD": {
+      "model": "CLASSIC CHORUS",
+      "on": true,
+      "params": {
+        "RATE": 30,
+        "DEPTH": 35
+      }
+    },
+    "DLY": {
+      "model": "DIGI DELAY",
+      "on": true,
+      "params": {
+        "E.LEVEL": 20,
+        "F.BACK": 25,
+        "D.TIME": 50,
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "HALL",
+      "on": true,
+      "params": {
+        "DECAY": 55,
+        "PRE.D": 30,
+        "LIVELINESS": 50,
+        "LEVEL": 22
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "GATE": {
+          "params": {
+            "SENS": 35,
+            "DECAY": 45
+          }
+        },
+        "EFX": {
+          "model": "MUF DIST",
+          "on": true,
+          "params": {
+            "VOLUME": 60,
+            "TONE": 50,
+            "SUSTAIN": 85
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 52,
+            "PRES": 50,
+            "TREB": 58,
+            "MIDDLE": 60,
+            "LEVEL": 76
+          }
+        },
+        "MOD": {
+          "model": "CLASSIC CHORUS",
+          "on": false
+        },
+        "DLY": {
+          "params": {
+            "E.LEVEL": 18,
+            "F.BACK": 20,
+            "D.TIME": 55
+          }
+        },
+        "RVB": {
+          "params": {
+            "DECAY": 45,
+            "LEVEL": 15
+          }
+        },
+        "CMP": {
+          "as": "EFX",
+          "model": "RC BST",
+          "on": true,
+          "params": {
+            "GAIN": 30,
+            "VOL": 65,
+            "BASS": 45,
+            "TREBLE": 50
+          }
+        },
+        "IR": {
+          "params": {
+            "HIGH_CUT": "6.5khz"
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "EFX": {
+          "model": "MUF DIST",
+          "on": false
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 32
+          }
+        },
+        "MOD": {
+          "params": {
+            "DEPTH": 45
+          }
+        },
+        "DLY": {
+          "params": {
+            "E.LEVEL": 28
+          }
+        },
+        "RVB": {
+          "params": {
+            "DECAY": 65,
+            "LEVEL": 30
+          }
+        }
+      }
+    }
+  }
+}

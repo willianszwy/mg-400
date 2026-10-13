@@ -1,0 +1,178 @@
+{
+  "name": "MTL FW",
+  "notes": "Early-80s thrash: Marshall JCM800 pushed by a TS808 into a 1960 4x12 (G12T-75), tight gate, downpicked palm mutes. SCN1 rhythm, SCN2 solo, SCN3 intro (more open).",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 35,
+        "DECAY": 40
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "T SCREAMER",
+      "on": true,
+      "params": {
+        "DRIVE": 10,
+        "TONE": 55,
+        "LEVEL": 90
+      }
+    },
+    "AMP": {
+      "model": "BRIT 800",
+      "on": true,
+      "params": {
+        "GAIN": 75,
+        "PRES": 55,
+        "LEVEL": 72,
+        "BASS": 60,
+        "MIDDLE": 50,
+        "TREB": 62
+      }
+    },
+    "IR": {
+      "model": "T75 412",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "90hz",
+        "HIGH_CUT": "7.5khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": true,
+      "params": {
+        "VOL": "0db",
+        "31HZ": "-4db",
+        "62HZ": "0db",
+        "125HZ": "+2db",
+        "250HZ": "0db",
+        "500HZ": "-2db",
+        "1KHZ": "-1db",
+        "2KHZ": "+1db",
+        "4KHZ": "+1db",
+        "8KHZ": "0db",
+        "16KHZ": "-3db",
+        "GAIN": "0db"
+      }
+    },
+    "MOD": {
+      "model": "ST.CHORUS",
+      "on": false
+    },
+    "DLY": {
+      "model": "DIGI DELAY",
+      "on": false,
+      "params": {
+        "E.LEVEL": 20,
+        "F.BACK": 25,
+        "D.TIME": 50,
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "ROOM",
+      "on": true,
+      "params": {
+        "DECAY": 25,
+        "TONE": 50,
+        "LEVEL": 10
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "GATE": {
+          "params": {
+            "SENS": 30,
+            "DECAY": 50
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 82,
+            "MIDDLE": 62,
+            "LEVEL": 78
+          }
+        },
+        "EQ": {
+          "params": {
+            "500HZ": "0db",
+            "1KHZ": "+1db"
+          }
+        },
+        "DLY": {
+          "model": "DIGI DELAY",
+          "on": true,
+          "params": {
+            "E.LEVEL": 20,
+            "F.BACK": 25,
+            "D.TIME": 50,
+            "SUBDIV": "1/4"
+          }
+        },
+        "RVB": {
+          "params": {
+            "LEVEL": 15
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "AMP": {
+          "params": {
+            "GAIN": 65
+          }
+        },
+        "DLY": {
+          "model": "DIGI DELAY",
+          "on": true,
+          "params": {
+            "E.LEVEL": 15,
+            "F.BACK": 20,
+            "D.TIME": 55,
+            "SUBDIV": "1/4"
+          }
+        },
+        "RVB": {
+          "model": "HALL",
+          "on": true,
+          "params": {
+            "DECAY": 50,
+            "PRE.D": 25,
+            "LIVELINESS": 50,
+            "LEVEL": 20
+          }
+        }
+      }
+    }
+  }
+}

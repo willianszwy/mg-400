@@ -1,0 +1,94 @@
+{
+  "name": "JP GP",
+  "notes": "2000s prog metal, 7-string heavy rhythm: Rectifier, tight TS boost, scooped mids, hard gate for staccato riffs, dry.",
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 45,
+        "DECAY": 25
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "T SCREAMER",
+      "on": true,
+      "params": {
+        "DRIVE": 0,
+        "TONE": 60,
+        "LEVEL": 95
+      }
+    },
+    "AMP": {
+      "model": "DUAL RECT",
+      "on": true,
+      "params": {
+        "GAIN": 75,
+        "PRES": 58,
+        "LEVEL": 72,
+        "BASS": 55,
+        "MIDDLE": 48,
+        "TREB": 62
+      }
+    },
+    "IR": {
+      "model": "RECT 412",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "100hz",
+        "HIGH_CUT": "7.5khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": true,
+      "params": {
+        "VOL": "0db",
+        "31HZ": "-4db",
+        "62HZ": "0db",
+        "125HZ": "+2db",
+        "250HZ": "-1db",
+        "500HZ": "-3db",
+        "1KHZ": "-1db",
+        "2KHZ": "+1db",
+        "4KHZ": "+2db",
+        "8KHZ": "0db",
+        "16KHZ": "-3db",
+        "GAIN": "0db"
+      }
+    },
+    "MOD": {
+      "model": "ST.CHORUS",
+      "on": false
+    },
+    "DLY": {
+      "model": "DIGI DELAY",
+      "on": false,
+      "params": {
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "ROOM",
+      "on": true,
+      "params": {
+        "DECAY": 25,
+        "TONE": 50,
+        "LEVEL": 12
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  }
+}

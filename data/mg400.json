@@ -1,0 +1,3871 @@
+{
+ "device": "NUX MG-400",
+ "verified_firmware": "V3.0.3",
+ "midi": {
+  "channel": 0,
+  "port_match": "MG-400",
+  "bypass_offset": 64,
+  "notes": [
+   "Type CC value = model number; add 64 to the same value to switch the block off.",
+   "Changing a model resets that block's params to the model defaults; changing AMP also switches IR to the matching cab.",
+   "Edits go to the current edit buffer only; save on the pedal to keep them.",
+   "CC77 = UI cursor (selected block); program change = preset slot (0-based, 4 per bank A-D)."
+  ]
+ },
+ "scales": {
+  "db15": "dB = -15 + 0.3*v (6-band EQ, +-15 dB)",
+  "db12": "dB = -12 + 0.24*v (+-12 dB)",
+  "lowcut": "Hz = 20 * 50**(v/100) (20 Hz .. 1 kHz)",
+  "highcut": "Hz = 5000 * 4**(v/100) (5 kHz .. 20 kHz)"
+ },
+ "chain_order": [
+  "GATE",
+  "CMP",
+  "EFX",
+  "AMP",
+  "IR",
+  "EQ",
+  "MOD",
+  "DLY",
+  "RVB",
+  "PL"
+ ],
+ "blocks": {
+  "CMP": {
+   "type_cc": 1,
+   "param_cc": 14
+  },
+  "EFX": {
+   "type_cc": 2,
+   "param_cc": 18
+  },
+  "AMP": {
+   "type_cc": 3,
+   "param_cc": 24
+  },
+  "EQ": {
+   "type_cc": 4,
+   "param_cc": 32
+  },
+  "GATE": {
+   "type_cc": 5,
+   "param_cc": 44
+  },
+  "MOD": {
+   "type_cc": 6,
+   "param_cc": 48
+  },
+  "DLY": {
+   "type_cc": 7,
+   "param_cc": 54
+  },
+  "RVB": {
+   "type_cc": 8,
+   "param_cc": 62
+  },
+  "IR": {
+   "type_cc": 9,
+   "param_cc": 66,
+   "params": [
+    {
+     "name": "MIC",
+     "index": 0,
+     "min": 0,
+     "max": 3,
+     "choices": [
+      "C414",
+      "E906",
+      "U87",
+      "SM57"
+     ],
+     "based_on": {
+      "C414": "AKG C414",
+      "E906": "Sennheiser e906",
+      "U87": "Neumann U87",
+      "SM57": "Shure SM57"
+     }
+    },
+    {
+     "name": "MIC_POS",
+     "index": 1,
+     "min": 0,
+     "max": 2,
+     "choices": [
+      "EDGE",
+      "MIDDLE",
+      "CENTER"
+     ]
+    },
+    {
+     "name": "LEVEL",
+     "index": 2,
+     "min": 0,
+     "max": 100,
+     "scale": "db12"
+    },
+    {
+     "name": "LOW_CUT",
+     "index": 3,
+     "min": 0,
+     "max": 100,
+     "scale": "lowcut"
+    },
+    {
+     "name": "HIGH_CUT",
+     "index": 4,
+     "min": 0,
+     "max": 100,
+     "scale": "highcut"
+    }
+   ]
+  },
+  "PL": {
+   "type_cc": 10,
+   "param_cc": 74,
+   "params": [
+    {
+     "name": "LEVEL",
+     "index": 0,
+     "min": 0,
+     "max": 100,
+     "scale": "db12",
+     "note": "50 = 0 dB (scale assumed like IR level)"
+    },
+    {
+     "name": "MIN",
+     "index": 1,
+     "min": 0,
+     "max": 100,
+     "note": "volume with the built-in expression pedal heel down; 0 = silent"
+    },
+    {
+     "name": "MAX",
+     "index": 2,
+     "min": 0,
+     "max": 100,
+     "note": "volume with the expression pedal toe down (CC76, inferred)"
+    }
+   ]
+  }
+ },
+ "models": {
+  "CMP": {
+   "1": {
+    "name": "RED COMP",
+    "params": [
+     {
+      "name": "OUTPUT",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 81
+     },
+     {
+      "name": "SENSITIVITY",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 20
+     }
+    ],
+    "based_on": "MXR Dyna Comp",
+    "reference": "inferred"
+   },
+   "2": {
+    "name": "ROSE COMP",
+    "params": [
+     {
+      "name": "SUSTAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "LEVEL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 66
+     }
+    ],
+    "based_on": "Ross Compressor",
+    "reference": "official"
+   },
+   "3": {
+    "name": "STUDIO COMP",
+    "params": [
+     {
+      "name": "THR",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 63
+     },
+     {
+      "name": "RATIO",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 63
+     },
+     {
+      "name": "GAIN",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "RELEASE",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 34
+     }
+    ],
+    "based_on": "generic studio compressor",
+    "reference": "official"
+   }
+  },
+  "EFX": {
+   "1": {
+    "name": "DIST+",
+    "params": [
+     {
+      "name": "OUTPUT",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "DISTORTION",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "MXR Distortion+",
+    "reference": "official"
+   },
+   "2": {
+    "name": "RC BST",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "VOL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "BASS",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREBLE",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Xotic RC Booster",
+    "reference": "official"
+   },
+   "3": {
+    "name": "AC BST",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "VOL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "BASS",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREBLE",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Xotic AC Booster",
+    "reference": "official"
+   },
+   "4": {
+    "name": "DIST UNO",
+    "params": [
+     {
+      "name": "LEVEL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "DRIVE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     }
+    ],
+    "based_on": "Boss DS-1",
+    "reference": "official"
+   },
+   "5": {
+    "name": "T SCREAMER",
+    "params": [
+     {
+      "name": "DRIVE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 75
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     }
+    ],
+    "based_on": "Ibanez TS808 Tube Screamer",
+    "reference": "official"
+   },
+   "6": {
+    "name": "BLUES DRIVE",
+    "params": [
+     {
+      "name": "LEVEL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "GAIN",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Boss BD-2 Blues Driver",
+    "reference": "official"
+   },
+   "7": {
+    "name": "MORNING DRIVE",
+    "params": [
+     {
+      "name": "LEVEL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "DRIVE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "TONE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "JHS Morning Glory",
+    "reference": "official"
+   },
+   "8": {
+    "name": "MODERN DIST",
+    "params": [
+     {
+      "name": "DISTORTION",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "FILTER",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "VOLUME",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Pro Co RAT",
+    "reference": "official"
+   },
+   "9": {
+    "name": "RED DIST",
+    "params": [
+     {
+      "name": "DRIVE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 85
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     }
+    ],
+    "based_on": "Keeley Red Dirt",
+    "reference": "official"
+   },
+   "10": {
+    "name": "CRUNCH",
+    "params": [
+     {
+      "name": "VOLUME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 20
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     },
+     {
+      "name": "GAIN",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "JHS Angry Charlie",
+    "reference": "official"
+   },
+   "11": {
+    "name": "MUF DIST",
+    "params": [
+     {
+      "name": "VOLUME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 39
+     },
+     {
+      "name": "SUSTAIN",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     }
+    ],
+    "based_on": "Electro-Harmonix Big Muff",
+    "reference": "official"
+   },
+   "12": {
+    "name": "KATANA",
+    "params": [
+     {
+      "name": "BOOST",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": null
+     },
+     {
+      "name": "VOLUME",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": null
+     }
+    ],
+    "based_on": "Keeley Katana clean boost",
+    "reference": "official"
+   },
+   "13": {
+    "name": "ST SINGER",
+    "params": [
+     {
+      "name": "VOLUME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 33
+     },
+     {
+      "name": "GAIN",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 39
+     },
+     {
+      "name": "FILTER",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 66
+     }
+    ],
+    "based_on": "NUX Steel Singer Drive (Dumble-style)",
+    "reference": "official"
+   },
+   "14": {
+    "name": "RED FUZZ",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 33
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 39
+     },
+     {
+      "name": "OUTPUT",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 66
+     }
+    ],
+    "based_on": "Arbiter/Dallas Fuzz Face",
+    "reference": "official"
+   },
+   "15": {
+    "name": "TOUCH WAH",
+    "params": [
+     {
+      "name": "MODE",
+      "index": 0,
+      "min": 0,
+      "max": 3,
+      "default": 2
+     },
+     {
+      "name": "DECAY",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 39
+     },
+     {
+      "name": "SENS",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 66
+     },
+     {
+      "name": "LEVEL",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Musitronics Mu-Tron III",
+    "reference": "official"
+   },
+   "16": {
+    "name": "FULL-OD HP",
+    "params": [
+     {
+      "name": "VOLUME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "DRIVE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TONE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Fulltone OCD, HP mode",
+    "reference": "inferred"
+   },
+   "17": {
+    "name": "HORSEMAN OD",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREBLE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "OUTPUT",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "NUX Horseman (Klon Centaur style)",
+    "reference": "official"
+   },
+   "18": {
+    "name": "NOB PDR",
+    "params": [
+     {
+      "name": "DRIVE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "LEVEL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "SPECTRUM",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Nobels ODR-1",
+    "reference": "inferred"
+   },
+   "19": {
+    "name": "RIV BLUEFLOG",
+    "params": [
+     {
+      "name": "LEVEL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "GAIN",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TONE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "unknown - NUX gives no reference",
+    "reference": "inferred"
+   },
+   "20": {
+    "name": "TURBO OD",
+    "params": [
+     {
+      "name": "LEVEL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "DRIVE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Boss OD-2 Turbo Overdrive",
+    "reference": "inferred"
+   }
+  },
+  "AMP": {
+   "1": {
+    "name": "JAZZ CLEAN",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "BRIGHT",
+      "index": 1,
+      "min": 0,
+      "max": 1,
+      "default": null,
+      "switch": true
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 83
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     }
+    ],
+    "based_on": "Roland JC-120",
+    "reference": "official"
+   },
+   "2": {
+    "name": "DELUXE RVB",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "LEVEL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "MIDDLE",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "TREB",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 70
+     }
+    ],
+    "based_on": "Fender Deluxe Reverb",
+    "reference": "official"
+   },
+   "3": {
+    "name": "BASS MATE",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 70
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 67
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Fender Bassman",
+    "reference": "official"
+   },
+   "4": {
+    "name": "TWEEDY",
+    "params": [
+     {
+      "name": "LEVEL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "GAIN",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Fender Tweed Deluxe",
+    "reference": "official"
+   },
+   "5": {
+    "name": "TWIN RVB",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "BRIGHT",
+      "index": 1,
+      "min": 0,
+      "max": 1,
+      "default": null,
+      "switch": true
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Fender Twin Reverb",
+    "reference": "official"
+   },
+   "6": {
+    "name": "HIWIRE",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 62
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 76
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 78
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 76
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     }
+    ],
+    "based_on": "Hiwatt DR103",
+    "reference": "official"
+   },
+   "7": {
+    "name": "CALI CRUNCH",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 70
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Mesa/Boogie Mark I",
+    "reference": "official"
+   },
+   "8": {
+    "name": "CLASS A15",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 84
+     },
+     {
+      "name": "CUT",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 58
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 64
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     }
+    ],
+    "based_on": "Vox AC15",
+    "reference": "official"
+   },
+   "9": {
+    "name": "CLASS A30",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 44
+     },
+     {
+      "name": "CUT",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 86
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     }
+    ],
+    "based_on": "Vox AC30",
+    "reference": "official"
+   },
+   "10": {
+    "name": "PLEXI 100",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 85
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 39
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 74
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 84
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 62
+     }
+    ],
+    "based_on": "Marshall JTM45/100",
+    "reference": "official"
+   },
+   "11": {
+    "name": "PLEXI 45",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 75
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 70
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Marshall JTM45",
+    "reference": "official"
+   },
+   "12": {
+    "name": "BRIT 800",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 74
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Marshall JCM800",
+    "reference": "official"
+   },
+   "13": {
+    "name": "1987X 50W",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 68
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 70
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     }
+    ],
+    "based_on": "Marshall 1987X",
+    "reference": "official"
+   },
+   "14": {
+    "name": "SLO 100",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Soldano SLO-100",
+    "reference": "official"
+   },
+   "15": {
+    "name": "FIREMAN HBE",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 61
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 46
+     }
+    ],
+    "based_on": "Friedman HBE-100",
+    "reference": "official"
+   },
+   "16": {
+    "name": "DUAL RECT",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 70
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 77
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Mesa/Boogie Dual Rectifier",
+    "reference": "official"
+   },
+   "17": {
+    "name": "DIE VH4",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 84
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Diezel VH4",
+    "reference": "official"
+   },
+   "18": {
+    "name": "VIB KING",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "BRIGHT",
+      "index": 1,
+      "min": 0,
+      "max": 1,
+      "default": null,
+      "switch": true
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Fender Vibro-King",
+    "reference": "official"
+   },
+   "19": {
+    "name": "BUDDA",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 69
+     },
+     {
+      "name": "CUT",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 37
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 75
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Budda Superdrive",
+    "reference": "official"
+   },
+   "20": {
+    "name": "MR.Z 38",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 74
+     },
+     {
+      "name": "CUT",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 64
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 67
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 94
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 64
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Dr. Z Maz 38",
+    "reference": "official"
+   },
+   "21": {
+    "name": "SUPER RVB",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "BRIGHT",
+      "index": 1,
+      "min": 0,
+      "max": 1,
+      "default": null,
+      "switch": true
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Fender Super-Sonic (not the Super Reverb)",
+    "reference": "official"
+   },
+   "22": {
+    "name": "BRIT BLUES",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Marshall Bluesbreaker",
+    "reference": "official"
+   },
+   "23": {
+    "name": "MATCH D30",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 90
+     },
+     {
+      "name": "CUT",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 33
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     }
+    ],
+    "based_on": "Matchless DC-30",
+    "reference": "official"
+   },
+   "24": {
+    "name": "BRIT 2000",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "Marshall JCM2000",
+    "reference": "official"
+   },
+   "25": {
+    "name": "UBER HIGAIN",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 55
+     }
+    ],
+    "based_on": "Bogner Uberschall",
+    "reference": "official"
+   },
+   "26": {
+    "name": "MLD",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 37
+     },
+     {
+      "name": "MASTER",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 63
+     },
+     {
+      "name": "BASS",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 74
+     },
+     {
+      "name": "MID",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 24
+     },
+     {
+      "name": "M.FREQ",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 67
+     }
+    ],
+    "based_on": "NUX Melvin Lee Davis bass preamp (bass)",
+    "reference": "official"
+   },
+   "27": {
+    "name": "STAGEMAN",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "MASTER",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 19
+     },
+     {
+      "name": "BASS",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 85
+     },
+     {
+      "name": "MID",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 69
+     },
+     {
+      "name": "TREB",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     }
+    ],
+    "based_on": "NUX Stageman AC-50 (acoustic)",
+    "reference": "official"
+   },
+   "28": {
+    "name": "VIVO",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 25
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     },
+     {
+      "name": "MASTER",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 5
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 9
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 84
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 62
+     }
+    ],
+    "based_on": "Peavey 5150",
+    "reference": "official"
+   },
+   "29": {
+    "name": "L STAR",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 7
+     },
+     {
+      "name": "PRES",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 23
+     },
+     {
+      "name": "MASTER",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "BASS",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 63
+     },
+     {
+      "name": "MIDDLE",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "TREB",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 43
+     }
+    ],
+    "based_on": "Mesa/Boogie Lone Star Special",
+    "reference": "official"
+   },
+   "30": {
+    "name": "I DELUXE RVB",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     },
+     {
+      "name": "MASTER",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 60
+     }
+    ],
+    "based_on": "NUX Deep Image capture of a Fender Deluxe Reverb",
+    "reference": "official",
+    "note": "Deep Image amp (a capture/'image' of a real amp, per NUX), confirmed on the user's pedal (fw V3.0.3)"
+   },
+   "31": {
+    "name": "I CLASS A30",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 44
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "CUT",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 86
+     }
+    ],
+    "based_on": "NUX Deep Image capture of a Vox AC30",
+    "reference": "official",
+    "note": "Deep Image amp (a capture/'image' of a real amp, per NUX), confirmed on the user's pedal (fw V3.0.3)"
+   },
+   "32": {
+    "name": "I FIREMAN",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 61
+     },
+     {
+      "name": "PRES",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 46
+     },
+     {
+      "name": "MASTER",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     }
+    ],
+    "based_on": "NUX Deep Image capture of a Friedman HBE",
+    "reference": "official",
+    "note": "Deep Image amp (a capture/'image' of a real amp, per NUX), confirmed on the user's pedal (fw V3.0.3)"
+   },
+   "33": {
+    "name": "NAM 1",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "34": {
+    "name": "NAM 2",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "35": {
+    "name": "NAM 3",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "36": {
+    "name": "NAM 4",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "37": {
+    "name": "NAM 5",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "38": {
+    "name": "NAM 6",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "39": {
+    "name": "NAM 7",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "40": {
+    "name": "NAM 8",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "41": {
+    "name": "NAM 9",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   },
+   "42": {
+    "name": "NAM 10",
+    "params": [
+     {
+      "name": "GAIN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "BASS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MIDDLE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "TREB",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "MASTER",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "user-loaded NAM capture (describe it in nam_slots.json)",
+    "reference": "user",
+    "note": "Selecting a NAM makes the pedal switch the IR block off by itself. Full Rig (FR) captures already include the cab, so keep IR off."
+   }
+  },
+  "EQ": {
+   "1": {
+    "name": "6-EQ",
+    "params": [
+     {
+      "name": "100HZ",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "scale": "db15"
+     },
+     {
+      "name": "220HZ",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "scale": "db15"
+     },
+     {
+      "name": "500HZ",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "scale": "db15"
+     },
+     {
+      "name": "1.2KHZ",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "scale": "db15"
+     },
+     {
+      "name": "2.6KHZ",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "scale": "db15"
+     },
+     {
+      "name": "6.4KHZ",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 50,
+      "scale": "db15"
+     }
+    ],
+    "based_on": "Boss GE-6",
+    "reference": "official"
+   },
+   "2": {
+    "name": "10-EQ",
+    "params": [
+     {
+      "name": "VOL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 54,
+      "scale": "db12"
+     },
+     {
+      "name": "31HZ",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 43,
+      "scale": "db12"
+     },
+     {
+      "name": "62HZ",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 53,
+      "scale": "db12"
+     },
+     {
+      "name": "125HZ",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 54,
+      "scale": "db12"
+     },
+     {
+      "name": "250HZ",
+      "index": 4,
+      "min": 0,
+      "max": 100,
+      "default": 39,
+      "scale": "db12"
+     },
+     {
+      "name": "500HZ",
+      "index": 5,
+      "min": 0,
+      "max": 100,
+      "default": 52,
+      "scale": "db12"
+     },
+     {
+      "name": "1KHZ",
+      "index": 6,
+      "min": 0,
+      "max": 100,
+      "default": 41,
+      "scale": "db12"
+     },
+     {
+      "name": "2KHZ",
+      "index": 7,
+      "min": 0,
+      "max": 100,
+      "default": 66,
+      "scale": "db12"
+     },
+     {
+      "name": "4KHZ",
+      "index": 8,
+      "min": 0,
+      "max": 100,
+      "default": 47,
+      "scale": "db12"
+     },
+     {
+      "name": "8KHZ",
+      "index": 9,
+      "min": 0,
+      "max": 100,
+      "default": 48,
+      "scale": "db12"
+     },
+     {
+      "name": "16KHZ",
+      "index": 10,
+      "min": 0,
+      "max": 100,
+      "default": 47,
+      "scale": "db12"
+     },
+     {
+      "name": "GAIN",
+      "index": 11,
+      "min": 0,
+      "max": 100,
+      "default": 58,
+      "scale": "db12"
+     }
+    ],
+    "based_on": "MXR 10-Band Graphic EQ",
+    "reference": "official"
+   }
+  },
+  "GATE": {
+   "1": {
+    "name": "NR",
+    "params": [
+     {
+      "name": "SENS",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 20
+     },
+     {
+      "name": "DECAY",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Boss NF-1 Noise Gate",
+    "reference": "official"
+   }
+  },
+  "MOD": {
+   "1": {
+    "name": "CE-1",
+    "params": [
+     {
+      "name": "INTEN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "DEPTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "RATE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 20
+     }
+    ],
+    "based_on": "Boss CE-1 Chorus Ensemble",
+    "reference": "official"
+   },
+   "2": {
+    "name": "CLASSIC CHORUS",
+    "params": [
+     {
+      "name": "RATE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 69
+     },
+     {
+      "name": "DEPTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 41
+     }
+    ],
+    "based_on": "Boss CE-2",
+    "reference": "inferred"
+   },
+   "3": {
+    "name": "ST.CHORUS",
+    "params": [
+     {
+      "name": "INTEN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 71
+     },
+     {
+      "name": "WIDTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "RATE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     }
+    ],
+    "based_on": "MXR M134 Stereo Chorus",
+    "reference": "official"
+   },
+   "4": {
+    "name": "VIBRATO",
+    "params": [
+     {
+      "name": "RATE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 25
+     },
+     {
+      "name": "DEPTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Boss VB-2",
+    "reference": "official"
+   },
+   "5": {
+    "name": "DETUNE",
+    "params": [
+     {
+      "name": "SHIFT-L",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 20
+     },
+     {
+      "name": "MIX",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 72
+     },
+     {
+      "name": "SHIFT-R",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 80
+     }
+    ],
+    "based_on": "NUX original detuner",
+    "reference": "official"
+   },
+   "6": {
+    "name": "FLANGE",
+    "params": [
+     {
+      "name": "DEPTH",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "RATE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "WIDTH",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "F.BACK",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Boss BF-3",
+    "reference": "official"
+   },
+   "7": {
+    "name": "PH 90",
+    "params": [
+     {
+      "name": "SPEED",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 68
+     }
+    ],
+    "based_on": "MXR Phase 90",
+    "reference": "official"
+   },
+   "8": {
+    "name": "PHASE 100",
+    "params": [
+     {
+      "name": "INTEN",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "SPEED",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 30
+     }
+    ],
+    "based_on": "MXR Phase 100",
+    "reference": "official"
+   },
+   "9": {
+    "name": "CHORUS+",
+    "params": [
+     {
+      "name": "SPEED",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 58
+     },
+     {
+      "name": "WIDTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 46
+     },
+     {
+      "name": "INTEN",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 59
+     }
+    ],
+    "based_on": "TC Electronic SCF (chorus/flanger)",
+    "reference": "official"
+   },
+   "10": {
+    "name": "U-VIBE",
+    "params": [
+     {
+      "name": "SPEED",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 66
+     },
+     {
+      "name": "VOLUME",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 78
+     },
+     {
+      "name": "INTEN",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 40
+     }
+    ],
+    "based_on": "Dunlop UV-1 Uni-Vibe",
+    "reference": "official"
+   },
+   "11": {
+    "name": "TREM",
+    "params": [
+     {
+      "name": "RATE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 65
+     },
+     {
+      "name": "DEPTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 18
+     }
+    ],
+    "based_on": "Boss TR-2",
+    "reference": "official"
+   },
+   "12": {
+    "name": "RTY SPK",
+    "params": [
+     {
+      "name": "BALANCE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 32
+     },
+     {
+      "name": "SPEED",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 62
+     }
+    ],
+    "based_on": "Strymon Lex (rotary/Leslie)",
+    "reference": "official"
+   },
+   "13": {
+    "name": "HARMONY",
+    "params": [
+     {
+      "name": "HARMO",
+      "index": 2,
+      "min": 0,
+      "max": 9,
+      "default": 0
+     },
+     {
+      "name": "BLEND",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 100
+     }
+    ],
+    "based_on": "DigiTech Harmony Man",
+    "reference": "official"
+   },
+   "14": {
+    "name": "SCH-1",
+    "params": [
+     {
+      "name": "RATE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 61
+     },
+     {
+      "name": "DEPTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 30
+     },
+     {
+      "name": "TONE",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     }
+    ],
+    "based_on": "Arion SCH-1 Stereo Chorus",
+    "reference": "official"
+   }
+  },
+  "DLY": {
+   "1": {
+    "name": "ANALOG DELAY",
+    "params": [
+     {
+      "name": "RATE",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 50
+     },
+     {
+      "name": "ECHO",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 32
+     },
+     {
+      "name": "INTEN",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 36
+     }
+    ],
+    "based_on": "Boss DM-2",
+    "reference": "official"
+   },
+   "2": {
+    "name": "DIGI DELAY",
+    "params": [
+     {
+      "name": "E.LEVEL",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 33
+     },
+     {
+      "name": "F.BACK",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 36
+     },
+     {
+      "name": "D.TIME",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 68
+     },
+     {
+      "name": "SUBDIV",
+      "index": 3,
+      "min": 0,
+      "max": 6,
+      "choices": [
+       "1/32",
+       "1/8T",
+       "1/16",
+       "1/4T",
+       "1/8",
+       "1/8D",
+       "1/4"
+      ],
+      "note": "tempo subdivision (CC57), confirmed on the pedal knob: 0=1/32, 1=1/8 triplet, 2=1/16, 3=1/4 triplet, 4=1/8, 5=dotted 1/8, 6=1/4. Factory presets may leave 1/32, which smears repeats into a glitchy mess."
+     }
+    ],
+    "based_on": "Boss DD-7",
+    "reference": "official"
+   },
+   "3": {
+    "name": "MODULATE",
+    "params": [
+     {
+      "name": "TIME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 48
+     },
+     {
+      "name": "LEVEL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 28
+     },
+     {
+      "name": "MOD",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 59
+     },
+     {
+      "name": "REPEAT",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 25
+     }
+    ],
+    "based_on": "Ibanez DML-10",
+    "reference": "official"
+   },
+   "4": {
+    "name": "TAPE ECHO",
+    "params": [
+     {
+      "name": "TIME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 100
+     },
+     {
+      "name": "LEVEL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 37
+     },
+     {
+      "name": "REPEAT",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 49
+     },
+     {
+      "name": "SUBDIV",
+      "index": 3,
+      "min": 0,
+      "max": 6,
+      "choices": [
+       "1/32",
+       "1/8T",
+       "1/16",
+       "1/4T",
+       "1/8",
+       "1/8D",
+       "1/4"
+      ],
+      "note": "tempo subdivision (CC57), same table as DIGI DELAY; presence confirmed on the pedal, CC assumed from DIGI DELAY"
+     }
+    ],
+    "based_on": "Roland RE-101 Space Echo",
+    "reference": "official"
+   },
+   "5": {
+    "name": "REVERSE",
+    "params": [
+     {
+      "name": "TIME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 39
+     },
+     {
+      "name": "MIX",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 36
+     },
+     {
+      "name": "F.BACK",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     }
+    ],
+    "based_on": "TC Electronic Alter Ego (reverse)",
+    "reference": "official"
+   },
+   "6": {
+    "name": "PAN",
+    "params": [
+     {
+      "name": "TIME",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 47
+     },
+     {
+      "name": "REPEAT",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 51
+     },
+     {
+      "name": "D.LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 44
+     }
+    ],
+    "based_on": "Ibanez DPL-10",
+    "reference": "official"
+   },
+   "7": {
+    "name": "PHI DELAY",
+    "params": [
+     {
+      "name": "MIX",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 33
+     },
+     {
+      "name": "REPEATS",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 36
+     },
+     {
+      "name": "TIME",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 68
+     }
+    ],
+    "based_on": "NUX original (DPhi)",
+    "reference": "official"
+   }
+  },
+  "RVB": {
+   "1": {
+    "name": "ROOM",
+    "params": [
+     {
+      "name": "DECAY",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 71
+     },
+     {
+      "name": "TONE",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 69
+     },
+     {
+      "name": "LEVEL",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 38
+     }
+    ],
+    "based_on": "MXR M300 room",
+    "reference": "official"
+   },
+   "2": {
+    "name": "HALL",
+    "params": [
+     {
+      "name": "DECAY",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 77
+     },
+     {
+      "name": "PRE.D",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 59
+     },
+     {
+      "name": "LIVELINESS",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 85
+     },
+     {
+      "name": "LEVEL",
+      "index": 3,
+      "min": 0,
+      "max": 100,
+      "default": 45
+     }
+    ],
+    "based_on": "Lexicon 480L hall",
+    "reference": "official"
+   },
+   "3": {
+    "name": "PLATE",
+    "params": [
+     {
+      "name": "DECAY",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 36
+     },
+     {
+      "name": "LEVEL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 42
+     }
+    ],
+    "based_on": "EMT 140 plate",
+    "reference": "official"
+   },
+   "4": {
+    "name": "SPRING",
+    "params": [
+     {
+      "name": "DECAY",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 35
+     },
+     {
+      "name": "LEVEL",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 27
+     }
+    ],
+    "based_on": "Boss FRV-1 ('63 Fender spring)",
+    "reference": "official"
+   },
+   "5": {
+    "name": "SHIMMER",
+    "params": [
+     {
+      "name": "MIX",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 46
+     },
+     {
+      "name": "DECAY",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 41
+     },
+     {
+      "name": "SHIM",
+      "index": 2,
+      "min": 0,
+      "max": 100,
+      "default": 13
+     }
+    ],
+    "based_on": "Neunaber Seraphim shimmer",
+    "reference": "official"
+   },
+   "6": {
+    "name": "DAMP",
+    "params": [
+     {
+      "name": "MIX",
+      "index": 0,
+      "min": 0,
+      "max": 100,
+      "default": 71
+     },
+     {
+      "name": "DEPTH",
+      "index": 1,
+      "min": 0,
+      "max": 100,
+      "default": 69
+     }
+    ],
+    "based_on": "Neunaber Wet",
+    "reference": "official"
+   }
+  },
+  "IR": {
+   "1": {
+    "name": "JAZZ 212",
+    "params": [],
+    "based_on": "Roland JC-120 2x12",
+    "reference": "inferred"
+   },
+   "2": {
+    "name": "BLACK 112",
+    "params": [],
+    "based_on": "Fender blackface Deluxe Reverb 1x12",
+    "reference": "inferred"
+   },
+   "3": {
+    "name": "TWEED 410",
+    "params": [],
+    "based_on": "Fender Bassman 4x10 (closest to a Super Reverb 4x10)",
+    "reference": "inferred"
+   },
+   "4": {
+    "name": "TWEED 112",
+    "params": [],
+    "based_on": "Fender Tweed Deluxe 1x12",
+    "reference": "inferred"
+   },
+   "5": {
+    "name": "TWIN 212",
+    "params": [],
+    "based_on": "Fender Twin Reverb 2x12",
+    "reference": "inferred"
+   },
+   "6": {
+    "name": "CUSTOM 412",
+    "params": [],
+    "based_on": "Hiwatt 4x12 (Fane)",
+    "reference": "inferred"
+   },
+   "7": {
+    "name": "CALI 112",
+    "params": [],
+    "based_on": "Mesa/Boogie 1x12",
+    "reference": "inferred"
+   },
+   "8": {
+    "name": "BLUE 112",
+    "params": [],
+    "based_on": "Vox AC15 1x12 Celestion Alnico Blue",
+    "reference": "inferred"
+   },
+   "9": {
+    "name": "BLUE 212",
+    "params": [],
+    "based_on": "Vox AC30 2x12 Celestion Alnico Blue",
+    "reference": "inferred"
+   },
+   "10": {
+    "name": "GREEN 412",
+    "params": [],
+    "based_on": "Marshall 4x12 Greenback",
+    "reference": "inferred"
+   },
+   "11": {
+    "name": "G12L 412",
+    "params": [],
+    "based_on": "Marshall 4x12 Celestion G12 (JTM45 era)",
+    "reference": "inferred"
+   },
+   "12": {
+    "name": "T75 412",
+    "params": [],
+    "based_on": "Marshall 1960 4x12 G12T-75",
+    "reference": "inferred"
+   },
+   "13": {
+    "name": "V30 412",
+    "params": [],
+    "based_on": "4x12 Celestion Vintage 30",
+    "reference": "inferred"
+   },
+   "14": {
+    "name": "SLO 412",
+    "params": [],
+    "based_on": "Soldano 4x12",
+    "reference": "inferred"
+   },
+   "15": {
+    "name": "HBE 412",
+    "params": [],
+    "based_on": "Friedman 4x12",
+    "reference": "inferred"
+   },
+   "16": {
+    "name": "RECT 412",
+    "params": [],
+    "based_on": "Mesa/Boogie Rectifier 4x12 (V30)",
+    "reference": "inferred"
+   },
+   "17": {
+    "name": "BOTM 412",
+    "params": [],
+    "based_on": "Diezel/Bogner-style 4x12",
+    "reference": "inferred"
+   },
+   "18": {
+    "name": "VIBRO 212",
+    "params": [],
+    "based_on": "Fender Vibro-King 2x12",
+    "reference": "inferred"
+   },
+   "19": {
+    "name": "EVL 112",
+    "params": [],
+    "based_on": "1x12 Electro-Voice EVM12L",
+    "reference": "inferred"
+   },
+   "20": {
+    "name": "BUTQ 212",
+    "params": [],
+    "based_on": "Budda 2x12",
+    "reference": "inferred"
+   },
+   "21": {
+    "name": "SUPER 212",
+    "params": [],
+    "based_on": "Fender Super-Sonic 2x12",
+    "reference": "inferred"
+   },
+   "22": {
+    "name": "BRIT 212",
+    "params": [],
+    "based_on": "Marshall Bluesbreaker 2x12",
+    "reference": "inferred"
+   },
+   "23": {
+    "name": "DC 212",
+    "params": [],
+    "based_on": "Matchless DC-30 2x12",
+    "reference": "inferred"
+   },
+   "24": {
+    "name": "G12M 412",
+    "params": [],
+    "based_on": "Marshall 4x12 Celestion G12M Greenback",
+    "reference": "inferred"
+   },
+   "25": {
+    "name": "UBER 412",
+    "params": [],
+    "based_on": "Bogner Uberkab 4x12",
+    "reference": "inferred"
+   },
+   "26": {
+    "name": "AGL DB810",
+    "params": [],
+    "based_on": "Aguilar DB 8x10 (bass)",
+    "reference": "official"
+   },
+   "27": {
+    "name": "AMP SV212",
+    "params": [],
+    "based_on": "Ampeg SVT 2x12 (bass)",
+    "reference": "official"
+   },
+   "28": {
+    "name": "AMP SV410",
+    "params": [],
+    "based_on": "Ampeg SVT 4x10 (bass)",
+    "reference": "official"
+   },
+   "29": {
+    "name": "AMP SV810",
+    "params": [],
+    "based_on": "Ampeg SVT 8x10 (bass)",
+    "reference": "official"
+   },
+   "30": {
+    "name": "BASSGUY 410",
+    "params": [],
+    "based_on": "Fender Bassman 4x10 (bass)",
+    "reference": "official"
+   },
+   "31": {
+    "name": "EDEN 410",
+    "params": [],
+    "based_on": "Eden D410XST (bass)",
+    "reference": "official"
+   },
+   "32": {
+    "name": "MKB 410",
+    "params": [],
+    "based_on": "Markbass 104HF (bass)",
+    "reference": "official"
+   },
+   "33": {
+    "name": "TRC 410",
+    "params": [],
+    "based_on": "Trace Elliot 1048 (bass)",
+    "reference": "official"
+   },
+   "34": {
+    "name": "G-HBIRD",
+    "params": [],
+    "based_on": "Gibson Hummingbird (acoustic body)",
+    "reference": "official"
+   },
+   "35": {
+    "name": "G-J15",
+    "params": [],
+    "based_on": "Gibson J-15 (acoustic body)",
+    "reference": "official"
+   },
+   "36": {
+    "name": "M-D45",
+    "params": [],
+    "based_on": "Martin D-45 (acoustic body)",
+    "reference": "official"
+   }
+  }
+ },
+ "references_source": "official: NUX 'MG-30 Models List - Models and References' (fw 4.03); inferred: deduced from model name/paired amp, verify by ear"
+}

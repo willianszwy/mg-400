@@ -1,0 +1,86 @@
+{
+  "name": "SRV TX",
+  "notes": "Texas blues-rock rhythm/lead: TS808 into a clean blackface-style amp, 4x10 cab, spring reverb. Note: SUPER RVB is a Super-Sonic; srv_se.json is the more faithful take. Strat neck or pos 4, Eb tuning, dig in.",
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": false
+    },
+    "CMP": {
+      "model": "ROSE COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "T SCREAMER",
+      "on": true,
+      "params": {
+        "DRIVE": 25,
+        "TONE": 60,
+        "LEVEL": 80
+      }
+    },
+    "AMP": {
+      "model": "SUPER RVB",
+      "on": true,
+      "params": {
+        "GAIN": 55,
+        "BRIGHT": 0,
+        "LEVEL": 70,
+        "BASS": 45,
+        "MIDDLE": 65,
+        "TREB": 60
+      }
+    },
+    "IR": {
+      "model": "TWEED 410",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "80hz",
+        "HIGH_CUT": "7khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": true,
+      "params": {
+        "VOL": "0db",
+        "31HZ": "-3db",
+        "62HZ": "-1db",
+        "125HZ": "0db",
+        "250HZ": "0db",
+        "500HZ": "+1db",
+        "1KHZ": "+2db",
+        "2KHZ": "+1db",
+        "4KHZ": "-1db",
+        "8KHZ": "0db",
+        "16KHZ": "0db",
+        "GAIN": "0db"
+      }
+    },
+    "MOD": {
+      "model": "U-VIBE",
+      "on": false
+    },
+    "DLY": {
+      "model": "ANALOG DELAY",
+      "on": false
+    },
+    "RVB": {
+      "model": "SPRING",
+      "on": true,
+      "params": {
+        "DECAY": 40,
+        "LEVEL": 22
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  }
+}

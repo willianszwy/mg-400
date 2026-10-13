@@ -1,0 +1,238 @@
+{
+  "name": "JP SF",
+  "notes": "Late-90s prog metal concept-album tone: Mesa Mark family voicing on DUAL RECT (more mids, less bass), V30 4x12, Mark-style V EQ, JC clean scene. SCN1 rhythm, SCN2 solo, SCN3 intro (clean).",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 35,
+        "DECAY": 35
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "T SCREAMER",
+      "on": true,
+      "params": {
+        "DRIVE": 8,
+        "TONE": 55,
+        "LEVEL": 85
+      }
+    },
+    "AMP": {
+      "model": "DUAL RECT",
+      "on": true,
+      "params": {
+        "GAIN": 65,
+        "PRES": 55,
+        "LEVEL": 72,
+        "BASS": 45,
+        "MIDDLE": 62,
+        "TREB": 60
+      }
+    },
+    "IR": {
+      "model": "RECT 412",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "85hz",
+        "HIGH_CUT": "7.5khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": true,
+      "params": {
+        "VOL": "0db",
+        "31HZ": "-3db",
+        "62HZ": "+1db",
+        "125HZ": "+2db",
+        "250HZ": "0db",
+        "500HZ": "-2db",
+        "1KHZ": "-1db",
+        "2KHZ": "+1db",
+        "4KHZ": "+2db",
+        "8KHZ": "0db",
+        "16KHZ": "-3db",
+        "GAIN": "0db"
+      }
+    },
+    "MOD": {
+      "model": "ST.CHORUS",
+      "on": false,
+      "params": {
+        "INTEN": 25,
+        "WIDTH": 45,
+        "RATE": 30
+      }
+    },
+    "DLY": {
+      "model": "DIGI DELAY",
+      "on": false,
+      "params": {
+        "E.LEVEL": 20,
+        "F.BACK": 25,
+        "D.TIME": 50,
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "ROOM",
+      "on": true,
+      "params": {
+        "DECAY": 25,
+        "TONE": 50,
+        "LEVEL": 12
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "GATE": {
+          "params": {
+            "SENS": 30,
+            "DECAY": 50
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 75,
+            "MIDDLE": 65,
+            "LEVEL": 77
+          }
+        },
+        "EQ": {
+          "params": {
+            "500HZ": "0db",
+            "1KHZ": "+2db",
+            "2KHZ": "+1db"
+          }
+        },
+        "MOD": {
+          "model": "ST.CHORUS",
+          "on": false,
+          "params": {
+            "INTEN": 15,
+            "WIDTH": 40,
+            "RATE": 25
+          }
+        },
+        "DLY": {
+          "model": "DIGI DELAY",
+          "on": true,
+          "params": {
+            "E.LEVEL": 14,
+            "F.BACK": 15,
+            "D.TIME": 52,
+            "SUBDIV": "1/4"
+          }
+        },
+        "RVB": {
+          "model": "HALL",
+          "on": true,
+          "params": {
+            "DECAY": 50,
+            "PRE.D": 25,
+            "LIVELINESS": 50,
+            "LEVEL": 15
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "GATE": {
+          "params": {
+            "SENS": 15,
+            "DECAY": 70
+          }
+        },
+        "EFX": {
+          "model": "T SCREAMER",
+          "on": false
+        },
+        "AMP": {
+          "model": "JAZZ CLEAN",
+          "on": true,
+          "params": {
+            "GAIN": 35,
+            "BRIGHT": 0,
+            "LEVEL": 75,
+            "BASS": 55,
+            "MIDDLE": 60,
+            "TREB": 60
+          }
+        },
+        "IR": {
+          "model": "RECT 412",
+          "on": true,
+          "params": {
+            "MIC": "SM57",
+            "LEVEL": "0db",
+            "LOW_CUT": "80hz",
+            "HIGH_CUT": "8khz"
+          }
+        },
+        "EQ": {
+          "model": "10-EQ",
+          "on": false
+        },
+        "MOD": {
+          "model": "ST.CHORUS",
+          "on": true,
+          "params": {
+            "INTEN": 40,
+            "WIDTH": 55,
+            "RATE": 30
+          }
+        },
+        "DLY": {
+          "model": "DIGI DELAY",
+          "on": true,
+          "params": {
+            "E.LEVEL": 25,
+            "F.BACK": 30,
+            "D.TIME": 55,
+            "SUBDIV": "1/4"
+          }
+        },
+        "RVB": {
+          "model": "HALL",
+          "on": true,
+          "params": {
+            "DECAY": 55,
+            "PRE.D": 30,
+            "LIVELINESS": 55,
+            "LEVEL": 25
+          }
+        }
+      }
+    }
+  }
+}

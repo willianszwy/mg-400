@@ -1,0 +1,152 @@
+{
+  "name": "JM CNT",
+  "notes": "Modern blues-pop (mid-2000s): Fender Vibro-King, Klon-style Horseman OD as a light push, TS808 for solos. Strat neck or pos 4. SCN1 rhythm, SCN2 solo, SCN3 intro.",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": false
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "HORSEMAN OD",
+      "on": true,
+      "params": {
+        "GAIN": 25,
+        "TREBLE": 55,
+        "OUTPUT": 60
+      }
+    },
+    "AMP": {
+      "model": "VIB KING",
+      "on": true,
+      "params": {
+        "GAIN": 45,
+        "BRIGHT": 0,
+        "LEVEL": 80,
+        "BASS": 45,
+        "MIDDLE": 55,
+        "TREB": 60
+      }
+    },
+    "IR": {
+      "model": "VIBRO 212",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "LEVEL": "0db",
+        "LOW_CUT": "80hz",
+        "HIGH_CUT": "7khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": false
+    },
+    "MOD": {
+      "model": "U-VIBE",
+      "on": false
+    },
+    "DLY": {
+      "model": "ANALOG DELAY",
+      "on": false,
+      "params": {
+        "RATE": 45,
+        "ECHO": 20,
+        "INTEN": 25
+      }
+    },
+    "RVB": {
+      "model": "SPRING",
+      "on": true,
+      "params": {
+        "DECAY": 40,
+        "LEVEL": 25
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "EFX": {
+          "model": "T SCREAMER",
+          "on": true,
+          "params": {
+            "DRIVE": 35,
+            "TONE": 55,
+            "LEVEL": 80
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 55,
+            "MIDDLE": 62,
+            "LEVEL": 85
+          }
+        },
+        "DLY": {
+          "on": true,
+          "model": "ANALOG DELAY",
+          "params": {
+            "RATE": 45,
+            "ECHO": 25,
+            "INTEN": 25
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "EFX": {
+          "model": "HORSEMAN OD",
+          "on": false
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 38
+          }
+        },
+        "DLY": {
+          "on": true,
+          "model": "ANALOG DELAY",
+          "params": {
+            "RATE": 50,
+            "ECHO": 22,
+            "INTEN": 30
+          }
+        },
+        "RVB": {
+          "model": "HALL",
+          "on": true,
+          "params": {
+            "DECAY": 60,
+            "PRE.D": 30,
+            "LIVELINESS": 60,
+            "LEVEL": 30
+          }
+        }
+      }
+    }
+  }
+}

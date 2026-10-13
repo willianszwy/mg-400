@@ -1,0 +1,4 @@
+{
+  "_comment": "Copy to nam_slots.json and describe the NAM captures loaded in your pedal (slots 1-10 = AMP models 'NAM 1'..'NAM 10'). full_rig = capture includes the cab, so keep the IR block off.",
+  "1": {"name": "FR MBDR MW Red Mdn -1 4FB LL", "amp": "Mesa Boogie Dual Rectifier, Red channel Modern", "full_rig": true, "source": "TONE3000"}
+}
