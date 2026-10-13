@@ -236,6 +236,7 @@ Other commands:
   - Each pedal holds different captures. Read `nam_slots.json`, which is local and not committed (see `nam_slots.example.json`), to know what is loaded. Ask the user to fill it if it is missing.
   - When a NAM is selected, the pedal switches the IR block off by itself.
   - Full Rig captures ("FR", "Full Rig") already include the cab and mic, so keep `"IR": {"model": "...", "on": false}`. Amp-only ("DI") captures need an IR.
+  - **NAM captures are MUCH louder than the built-in amps.** One at MASTER 50 nearly deafened the user. Always start at **MASTER 30 or lower**, and lower it again when a fuzz or boost sits in front. Warn the user to turn the monitor/headphone volume down before the first test of any NAM preset.
   - A real capture often beats the modeled amp. When the user has one of the target amp, offer it, e.g. a Dual Rectifier capture for a prog-metal rhythm.
   - Loading new NAM or IR files over MIDI is not mapped yet. The user loads them with QuickTone.
 - `save` stores the current edit buffer. Make sure the buffer holds the tone you want: apply, let the user confirm, then save.

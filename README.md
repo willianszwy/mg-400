@@ -47,7 +47,7 @@ Built and tuned on a real pedal, by ear, with the guitarist in the loop:
 | `jm_cnt` · 2000s blues-pop | Vibro-King, Horseman OD (Klon), TS808 | rhythm · solo · intro |
 | `jm_igf` · 80s-flavoured soft rock | Deluxe Reverb + ST Singer (Dumble), fuzz solo | rhythm · fuzz solo · intro |
 | `dg_cn` · late-70s prog anthem lead | Hiwatt, Dyna Comp, Big Muff + RC Boost | rhythm · solo · intro |
-| `dg_soy` · 70s British prog lead | Hiwatt, Dyna Comp, Power Boost, Tape Echo | one tone |
+| `dg_soy` · 70s British prog lead | Hiwatt, Dyna Comp, Power Boost, Tape Echo | rhythm · solo · intro |
 | `mtl_fw` · early-80s thrash | JCM800 + TS808, 1960 4x12 | rhythm · solo · intro |
 | `srv_se` · Texas blues shuffle | Twin + ST Singer (Dumble) + TS808 | rhythm · solo · intro |
 | `jp_mix` · prog metal multi-tone | Dual Rectifier, V-shaped EQ | three tones in one preset |
@@ -55,6 +55,9 @@ Built and tuned on a real pedal, by ear, with the guitarist in the loop:
 | `jp_sf` · late-90s prog metal | Dual Rect + Mark-style EQ, JC clean | rhythm · solo · intro |
 | `evh_pn_nam` · early-80s brown sound | 1968 Super Lead **NAM capture**, RC BST, tape echo | rhythm · solo · intro |
 | `evh_un_nam` · darker brown sound + flanger | Super Lead NAM, flanger **before** the amp | rhythm · solo · intro |
+| `jh_vibe_nam` · late-60s psychedelic | Fuzz Face + Uni-Vibe **before** the amp (switched slots), Super Lead NAM, Leslie intro | rhythm · solo · intro |
+| `jh_vc_nam` · late-60s wah-fuzz | Touch Wah → Fuzz Face → Super Lead NAM | rhythm · solo · intro |
+| `jh_vc_modern_nam` · same, low-noise | Klon-style OD instead of the fuzz, gentle gate, use your own wah | rhythm · solo · intro |
 
 The presets are plain JSON files in [`presets/`](presets/), so they are easy to read, diff and share.
 

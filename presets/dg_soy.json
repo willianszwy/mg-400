@@ -1,88 +1,32 @@
 {
   "name": "DG SOY",
-  "notes": "70s British prog lead: Dyna-Comp style compressor -> Power Boost style booster (RC BST) -> Hiwatt DR103 (HIWIRE) -> 4x12, tape echo, hall. Long sustain, slow bends; set delay TIME by ear (~70 BPM).",
+  "notes": "70s British prog lead: Dyna-Comp style compressor -> Power Boost style booster (RC BST) -> Hiwatt DR103 (HIWIRE) -> 4x12, tape echo (quarter-note subdivision), hall. Long sustain, slow bends; set delay TIME by ear (~65-70 BPM). SCN1 rhythm (cleaner, for chords/arpeggios), SCN2 solo (the original lead tone), SCN3 intro (ambient, drive off, long echo and hall).",
+  "order": ["GATE", "CMP", "EFX", "AMP", "IR", "EQ", "MOD", "DLY", "RVB", "PL"],
   "blocks": {
-    "GATE": {
-      "model": "NR",
-      "on": true,
-      "params": {
-        "SENS": 10,
-        "DECAY": 80
-      }
-    },
-    "CMP": {
-      "model": "RED COMP",
-      "on": true,
-      "params": {
-        "OUTPUT": 65,
-        "SENSITIVITY": 60
-      }
-    },
-    "EFX": {
-      "model": "RC BST",
-      "on": true,
-      "params": {
-        "GAIN": 55,
-        "VOL": 70,
-        "BASS": 45,
-        "TREBLE": 55
-      }
-    },
-    "AMP": {
-      "model": "HIWIRE",
-      "on": true,
-      "params": {
-        "GAIN": 52,
-        "PRES": 50,
-        "LEVEL": 75,
-        "BASS": 55,
-        "MIDDLE": 60,
-        "TREB": 62
-      }
-    },
-    "IR": {
-      "model": "CUSTOM 412",
-      "on": true,
-      "params": {
-        "MIC": "SM57",
-        "LEVEL": "0db",
-        "LOW_CUT": "90hz",
-        "HIGH_CUT": "7.5khz"
-      }
-    },
-    "EQ": {
-      "model": "10-EQ",
-      "on": false
-    },
-    "MOD": {
-      "model": "U-VIBE",
-      "on": false
-    },
-    "DLY": {
-      "model": "TAPE ECHO",
-      "on": true,
-      "params": {
-        "TIME": 55,
-        "LEVEL": 30,
-        "REPEAT": 42
-      }
-    },
-    "RVB": {
-      "model": "HALL",
-      "on": true,
-      "params": {
-        "DECAY": 60,
-        "PRE.D": 30,
-        "LIVELINESS": 50,
-        "LEVEL": 25
-      }
-    },
-    "PL": {
-      "params": {
-        "LEVEL": 50,
-        "MIN": 25,
-        "MAX": 100
-      }
-    }
+    "GATE": {"model": "NR", "on": true, "params": {"SENS": 10, "DECAY": 80}},
+    "CMP":  {"model": "RED COMP", "on": true, "params": {"OUTPUT": 62, "SENSITIVITY": 50}},
+    "EFX":  {"model": "RC BST", "on": true, "params": {"GAIN": 30, "VOL": 62, "BASS": 45, "TREBLE": 55}},
+    "AMP":  {"model": "HIWIRE", "on": true, "params": {"GAIN": 45, "PRES": 50, "LEVEL": 75, "BASS": 55, "MIDDLE": 60, "TREB": 60}},
+    "IR":   {"model": "CUSTOM 412", "on": true, "params": {"MIC": "SM57", "LEVEL": "0db", "LOW_CUT": "90hz", "HIGH_CUT": "7.5khz"}},
+    "EQ":   {"model": "10-EQ", "on": false},
+    "MOD":  {"model": "U-VIBE", "on": false},
+    "DLY":  {"model": "TAPE ECHO", "on": true, "params": {"TIME": 55, "LEVEL": 20, "REPEAT": 30, "SUBDIV": "1/4"}},
+    "RVB":  {"model": "HALL", "on": true, "params": {"DECAY": 55, "PRE.D": 30, "LIVELINESS": 50, "LEVEL": 20}},
+    "PL":   {"params": {"LEVEL": 50, "MIN": 25, "MAX": 100}}
+  },
+  "scenes": {
+    "2": {"blocks": {
+      "CMP": {"params": {"OUTPUT": 65, "SENSITIVITY": 60}},
+      "EFX": {"params": {"GAIN": 55, "VOL": 70}},
+      "AMP": {"params": {"GAIN": 52, "TREB": 62}},
+      "DLY": {"params": {"LEVEL": 30, "REPEAT": 42}},
+      "RVB": {"params": {"DECAY": 60, "LEVEL": 25}}
+    }},
+    "3": {"blocks": {
+      "EFX": {"model": "RC BST", "on": false},
+      "AMP": {"params": {"GAIN": 40}},
+      "DLY": {"params": {"LEVEL": 32, "REPEAT": 48}},
+      "RVB": {"params": {"DECAY": 72, "PRE.D": 35, "LEVEL": 30}}
+    }}
   }
 }

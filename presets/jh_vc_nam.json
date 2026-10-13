@@ -1,0 +1,134 @@
+{
+  "name": "JH VC (NAM)",
+  "notes": "Late-60s wah-fuzz blues-rock: wah -> Fuzz Face -> cranked 60s Marshall Super Lead. The pedal-controlled wah is not mapped yet, so the intro uses TOUCH WAH (Mu-Tron style auto-wah, opens with picking strength). Wah sits in the EFX slot; the MOD slot hosts the fuzz (as EFX) and is moved BEFORE the amp, so the order is wah -> fuzz -> amp like the original rig. Amp = 1968 Super Lead NAM in slot 5 (TONE3000 '1968 Marshall Super Lead 12 000 Series Drive A2', AmalgamAudio, full rig: IR off), MASTER kept low because NAM + fuzz is loud. Strat neck/middle, Eb tuning. SCN1 rhythm (main riff), SCN2 solo, SCN3 intro (muted wah scratching).",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "MOD",
+    "AMP",
+    "IR",
+    "EQ",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 32,
+        "DECAY": 55
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "TOUCH WAH",
+      "on": false,
+      "params": {
+        "MODE": 2,
+        "DECAY": 40,
+        "SENS": 70,
+        "LEVEL": 50
+      }
+    },
+    "MOD": {
+      "as": "EFX",
+      "model": "RED FUZZ",
+      "on": true,
+      "params": {
+        "GAIN": 65,
+        "TONE": 55,
+        "OUTPUT": 45
+      }
+    },
+    "AMP": {
+      "model": "NAM 5",
+      "on": true,
+      "params": {
+        "GAIN": 48,
+        "BASS": 50,
+        "MIDDLE": 55,
+        "TREB": 55,
+        "MASTER": 25
+      }
+    },
+    "IR": {
+      "model": "GREEN 412",
+      "on": false
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": false
+    },
+    "DLY": {
+      "model": "TAPE ECHO",
+      "on": false,
+      "params": {
+        "TIME": 40,
+        "LEVEL": 10,
+        "REPEAT": 12,
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "SPRING",
+      "on": true,
+      "params": {
+        "DECAY": 35,
+        "LEVEL": 16
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "MOD": {
+          "params": {
+            "GAIN": 75,
+            "OUTPUT": 48
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 52
+          }
+        },
+        "DLY": {
+          "model": "TAPE ECHO",
+          "on": true
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "EFX": {
+          "model": "TOUCH WAH",
+          "on": true
+        },
+        "MOD": {
+          "params": {
+            "GAIN": 45,
+            "OUTPUT": 45
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 42
+          }
+        }
+      }
+    }
+  }
+}

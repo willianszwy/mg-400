@@ -1,0 +1,31 @@
+{
+  "name": "JH VIBE (NAM)",
+  "notes": "Late-60s psychedelic blues-rock: Fuzz Face -> Uni-Vibe -> cranked 60s Marshall Super Lead, Leslie on cleans. CMP slot hosts the fuzz (as EFX) and the EFX slot hosts the Uni-Vibe (as MOD), so both sit BEFORE the amp like the original rig; the MOD slot after the amp holds a rotary for the intro scene. Amp = 1968 Super Lead NAM in slot 5 (TONE3000 '1968 Marshall Super Lead 12 000 Series Drive A2', AmalgamAudio, full rig: IR off). Strat neck/middle, Eb tuning; ride the guitar volume to clean up the fuzz. SCN1 rhythm (vibe chords), SCN2 solo (fuzz + slow vibe), SCN3 intro (clean-ish with Leslie).",
+  "order": ["GATE", "CMP", "EFX", "AMP", "IR", "EQ", "MOD", "DLY", "RVB", "PL"],
+  "blocks": {
+    "GATE": {"model": "NR", "on": true, "params": {"SENS": 20, "DECAY": 65}},
+    "CMP":  {"as": "EFX", "model": "RED FUZZ", "on": false, "params": {"GAIN": 70, "TONE": 55, "OUTPUT": 50}},
+    "EFX":  {"as": "MOD", "model": "U-VIBE", "on": true, "params": {"SPEED": 40, "VOLUME": 75, "INTEN": 50}},
+    "AMP":  {"model": "NAM 5", "on": true, "params": {"GAIN": 48, "BASS": 50, "MIDDLE": 55, "TREB": 55, "MASTER": 30}},
+    "IR":   {"model": "GREEN 412", "on": false},
+    "EQ":   {"model": "10-EQ", "on": false},
+    "MOD":  {"model": "RTY SPK", "on": false, "params": {"BALANCE": 50, "SPEED": 20}},
+    "DLY":  {"model": "TAPE ECHO", "on": false, "params": {"TIME": 40, "LEVEL": 10, "REPEAT": 12, "SUBDIV": "1/4"}},
+    "RVB":  {"model": "SPRING", "on": true, "params": {"DECAY": 35, "LEVEL": 18}},
+    "PL":   {"params": {"LEVEL": 50, "MIN": 25, "MAX": 100}}
+  },
+  "scenes": {
+    "2": {"blocks": {
+      "CMP": {"as": "EFX", "model": "RED FUZZ", "on": true, "params": {"GAIN": 70, "TONE": 55, "OUTPUT": 50}},
+      "EFX": {"params": {"SPEED": 25, "INTEN": 60}},
+      "AMP": {"params": {"GAIN": 52}},
+      "DLY": {"model": "TAPE ECHO", "on": true}
+    }},
+    "3": {"blocks": {
+      "EFX": {"as": "MOD", "model": "U-VIBE", "on": false},
+      "AMP": {"params": {"GAIN": 40}},
+      "MOD": {"model": "RTY SPK", "on": true, "params": {"BALANCE": 50, "SPEED": 20}},
+      "RVB": {"params": {"DECAY": 45, "LEVEL": 24}}
+    }}
+  }
+}
