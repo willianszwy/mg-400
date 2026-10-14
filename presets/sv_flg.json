@@ -1,0 +1,182 @@
+{
+  "name": "SV FLG",
+  "notes": "1990 instrumental shred-ballad lead: superstrat humbucker (neck for the melody), DS-1 style distortion used as a low-drive boost into a Bogner Uberschall-style high-gain amp (UBER HIGAIN, gain kept moderate and mids pushed for a singing lead), Uberkab 4x12 IR, lush delay and big hall. Original album rig was modded 100W Marshalls; I FIREMAN is the alternative. SCN1 main melody, SCN2 climax solo, SCN3 intro (light crunch arpeggios).",
+  "order": [
+    "GATE",
+    "CMP",
+    "EFX",
+    "AMP",
+    "IR",
+    "EQ",
+    "MOD",
+    "DLY",
+    "RVB",
+    "PL"
+  ],
+  "blocks": {
+    "GATE": {
+      "model": "NR",
+      "on": true,
+      "params": {
+        "SENS": 20,
+        "DECAY": 75
+      }
+    },
+    "CMP": {
+      "model": "RED COMP",
+      "on": false
+    },
+    "EFX": {
+      "model": "DIST UNO",
+      "on": true,
+      "params": {
+        "DRIVE": 20,
+        "TONE": 45,
+        "LEVEL": 72
+      }
+    },
+    "AMP": {
+      "model": "UBER HIGAIN",
+      "on": true,
+      "params": {
+        "GAIN": 42,
+        "PRES": 40,
+        "LEVEL": 70,
+        "BASS": 45,
+        "MIDDLE": 64,
+        "TREB": 52
+      }
+    },
+    "IR": {
+      "model": "UBER 412",
+      "on": true,
+      "params": {
+        "MIC": "SM57",
+        "MIC_POS": "MIDDLE",
+        "LEVEL": "0db",
+        "LOW_CUT": "90hz",
+        "HIGH_CUT": "6.5khz"
+      }
+    },
+    "EQ": {
+      "model": "10-EQ",
+      "on": true,
+      "params": {
+        "VOL": "0db",
+        "31HZ": "-8db",
+        "62HZ": "-2db",
+        "125HZ": "0db",
+        "250HZ": "-1db",
+        "500HZ": "+1db",
+        "1KHZ": "+2db",
+        "2KHZ": "+1db",
+        "4KHZ": "-1db",
+        "8KHZ": "-4db",
+        "16KHZ": "-8db",
+        "GAIN": "0db"
+      }
+    },
+    "MOD": {
+      "model": "CE-1",
+      "on": false
+    },
+    "DLY": {
+      "model": "DIGI DELAY",
+      "on": true,
+      "params": {
+        "E.LEVEL": 22,
+        "F.BACK": 30,
+        "D.TIME": 45,
+        "SUBDIV": "1/4"
+      }
+    },
+    "RVB": {
+      "model": "HALL",
+      "on": true,
+      "params": {
+        "DECAY": 60,
+        "PRE.D": 35,
+        "LIVELINESS": 60,
+        "LEVEL": 26
+      }
+    },
+    "PL": {
+      "params": {
+        "LEVEL": 50,
+        "MIN": 25,
+        "MAX": 100
+      }
+    }
+  },
+  "scenes": {
+    "2": {
+      "blocks": {
+        "EFX": {
+          "params": {
+            "DRIVE": 32,
+            "LEVEL": 76
+          }
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 52,
+            "MIDDLE": 68,
+            "LEVEL": 74
+          }
+        },
+        "DLY": {
+          "params": {
+            "E.LEVEL": 26,
+            "F.BACK": 35
+          }
+        },
+        "RVB": {
+          "params": {
+            "DECAY": 65,
+            "LEVEL": 28
+          }
+        }
+      }
+    },
+    "3": {
+      "blocks": {
+        "GATE": {
+          "params": {
+            "SENS": 10
+          }
+        },
+        "EFX": {
+          "model": "DIST UNO",
+          "on": false
+        },
+        "AMP": {
+          "params": {
+            "GAIN": 18,
+            "LEVEL": 72
+          }
+        },
+        "MOD": {
+          "model": "CE-1",
+          "on": true,
+          "params": {
+            "INTEN": 40,
+            "DEPTH": 45,
+            "RATE": 20
+          }
+        },
+        "DLY": {
+          "params": {
+            "E.LEVEL": 25,
+            "F.BACK": 35
+          }
+        },
+        "RVB": {
+          "params": {
+            "DECAY": 70,
+            "LEVEL": 32
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "EJ CD (NAM)",
+  "notes": "1990 'violin' instrumental lead: Strat neck/middle single-coil, tube overdrive pedal (Butler Tube Driver style -> TS808 low drive as a push) into a 50W 1968-69 Marshall Super Lead (NAM), tape echo (Echoplex style) and a light plate. Highs shaved by EQ for the smooth singing top. Needs the TONE3000 capture '1968 Marshall Super Lead 12 000 Series Drive A2' (AmalgamAudio, A2-Lite, full rig: IR off) in NAM slot 5 - https://www.tone3000.com/tones/1968-marshall-super-lead-12-000-series-drive-a2-72145 . SCN1 rhythm/theme, SCN2 solo, SCN3 free-time echo intro.",
+  "order": ["GATE", "CMP", "EFX", "AMP", "IR", "EQ", "MOD", "DLY", "RVB", "PL"],
+  "blocks": {
+    "GATE": {"model": "NR", "on": true, "params": {"SENS": 15, "DECAY": 70}},
+    "CMP": {"model": "RED COMP", "on": false},
+    "EFX": {"model": "T SCREAMER", "on": true, "params": {"DRIVE": 30, "TONE": 42, "LEVEL": 70}},
+    "AMP": {"model": "NAM 5", "on": true, "params": {"GAIN": 55, "BASS": 52, "MIDDLE": 60, "TREB": 42, "MASTER": 28}},
+    "IR": {"model": "GREEN 412", "on": false},
+    "EQ": {"model": "10-EQ", "on": true, "params": {
+      "VOL": "0db", "31HZ": "-6db", "62HZ": "0db", "125HZ": "+1db", "250HZ": "0db",
+      "500HZ": "+1db", "1KHZ": "+2db", "2KHZ": "0db", "4KHZ": "-3db", "8KHZ": "-5db", "16KHZ": "-8db", "GAIN": "0db"}},
+    "MOD": {"model": "CE-1", "on": false},
+    "DLY": {"model": "TAPE ECHO", "on": true, "params": {"TIME": 42, "LEVEL": 14, "REPEAT": 18, "SUBDIV": "1/4"}},
+    "RVB": {"model": "PLATE", "on": true, "params": {"DECAY": 35, "LEVEL": 16}},
+    "PL": {"params": {"LEVEL": 50, "MIN": 25, "MAX": 100}}
+  },
+  "scenes": {
+    "2": {"blocks": {
+      "EFX": {"params": {"DRIVE": 42, "LEVEL": 75}},
+      "AMP": {"params": {"GAIN": 62, "MIDDLE": 64, "MASTER": 30}},
+      "DLY": {"params": {"TIME": 45, "LEVEL": 20, "REPEAT": 22}},
+      "RVB": {"params": {"DECAY": 40, "LEVEL": 20}}
+    }},
+    "3": {"blocks": {
+      "EFX": {"params": {"DRIVE": 38, "LEVEL": 72}},
+      "AMP": {"params": {"GAIN": 60, "MIDDLE": 62}},
+      "DLY": {"params": {"TIME": 55, "LEVEL": 30, "REPEAT": 40}},
+      "RVB": {"params": {"DECAY": 55, "LEVEL": 26}}
+    }}
+  }
+}

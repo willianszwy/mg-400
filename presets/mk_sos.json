@@ -1,0 +1,28 @@
+{
+  "name": "MK SOS",
+  "notes": "Late-70s fingerpicked pub-rock clean: Strat in position 2 (bridge + middle, quacky), subtle JFET-style compressor (Ross-style ROSE COMP set low), small blackface Fender (Vibrolux/Deluxe class) turned up to the edge of breakup, 2x12 SM57, big room reverb, no delay. Played with the fingers, no pick. SCN1 rhythm/verse fills, SCN2 solo (more push), SCN3 intro (cleaner, more room).",
+  "order": ["GATE", "CMP", "EFX", "AMP", "IR", "EQ", "MOD", "DLY", "RVB", "PL"],
+  "blocks": {
+    "GATE": {"model": "NR", "on": false},
+    "CMP": {"model": "ROSE COMP", "on": true, "params": {"SUSTAIN": 30, "LEVEL": 62}},
+    "EFX": {"model": "BLUES DRIVE", "on": false},
+    "AMP": {"model": "DELUXE RVB", "on": true, "params": {"GAIN": 52, "LEVEL": 60, "BASS": 40, "MIDDLE": 58, "TREB": 64}},
+    "IR": {"model": "TWIN 212", "on": true, "params": {"MIC": "SM57", "MIC_POS": "MIDDLE", "LEVEL": "0db", "LOW_CUT": "90hz", "HIGH_CUT": "8khz"}},
+    "EQ": {"model": "10-EQ", "on": false},
+    "MOD": {"model": "CE-1", "on": false},
+    "DLY": {"model": "TAPE ECHO", "on": false},
+    "RVB": {"model": "ROOM", "on": true, "params": {"DECAY": 55, "TONE": 55, "LEVEL": 26}},
+    "PL": {"params": {"LEVEL": 50, "MIN": 25, "MAX": 100}}
+  },
+  "scenes": {
+    "2": {"blocks": {
+      "CMP": {"params": {"SUSTAIN": 38, "LEVEL": 66}},
+      "AMP": {"params": {"GAIN": 60, "LEVEL": 66, "MIDDLE": 62}},
+      "RVB": {"params": {"DECAY": 58, "LEVEL": 28}}
+    }},
+    "3": {"blocks": {
+      "AMP": {"params": {"GAIN": 44, "LEVEL": 62}},
+      "RVB": {"params": {"DECAY": 62, "LEVEL": 32}}
+    }}
+  }
+}

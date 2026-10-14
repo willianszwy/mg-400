@@ -1,0 +1,29 @@
+{
+  "name": "YJM FBTS",
+  "notes": "1984 neoclassical shred lead: Strat single coils (neck pickup), DOD 250 overdrive (same circuit family as the MXR Distortion+ -> DIST+) pushed hard into a 50W Marshall (1987X 50W), Greenback 4x12, digital delay and hall. Gate first to tame single-coil hiss. SCN1 rhythm/theme, SCN2 solo, SCN3 intro (same lead voice with more delay and hall).",
+  "order": ["GATE", "CMP", "EFX", "AMP", "IR", "EQ", "MOD", "DLY", "RVB", "PL"],
+  "blocks": {
+    "GATE": {"model": "NR", "on": true, "params": {"SENS": 30, "DECAY": 65}},
+    "CMP": {"model": "RED COMP", "on": false},
+    "EFX": {"model": "DIST+", "on": true, "params": {"DISTORTION": 58, "OUTPUT": 75}},
+    "AMP": {"model": "1987X 50W", "on": true, "params": {"GAIN": 55, "PRES": 48, "LEVEL": 70, "BASS": 55, "MIDDLE": 62, "TREB": 60}},
+    "IR": {"model": "GREEN 412", "on": true, "params": {"MIC": "SM57", "MIC_POS": "MIDDLE", "LEVEL": "0db", "LOW_CUT": "90hz", "HIGH_CUT": "7khz"}},
+    "EQ": {"model": "10-EQ", "on": false},
+    "MOD": {"model": "CE-1", "on": false},
+    "DLY": {"model": "DIGI DELAY", "on": true, "params": {"E.LEVEL": 18, "F.BACK": 25, "D.TIME": 40, "SUBDIV": "1/4"}},
+    "RVB": {"model": "HALL", "on": true, "params": {"DECAY": 50, "PRE.D": 30, "LIVELINESS": 55, "LEVEL": 20}},
+    "PL": {"params": {"LEVEL": 50, "MIN": 25, "MAX": 100}}
+  },
+  "scenes": {
+    "2": {"blocks": {
+      "EFX": {"params": {"DISTORTION": 66, "OUTPUT": 78}},
+      "AMP": {"params": {"GAIN": 62, "MIDDLE": 66, "LEVEL": 74}},
+      "DLY": {"params": {"E.LEVEL": 22, "F.BACK": 28}},
+      "RVB": {"params": {"LEVEL": 22}}
+    }},
+    "3": {"blocks": {
+      "DLY": {"params": {"E.LEVEL": 28, "F.BACK": 35, "D.TIME": 50}},
+      "RVB": {"params": {"DECAY": 65, "LEVEL": 30}}
+    }}
+  }
+}

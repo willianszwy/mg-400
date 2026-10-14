@@ -1,0 +1,34 @@
+{
+  "name": "DG ABW",
+  "notes": "1979 disco-rock studio guitars. SCN1: clean, compressed Strat bridge-pickup funk chords (recorded straight to the desk -> clean Twin-style amp, low gain). SCN2: solo - P90 neck pickup, heavy gate + compression, re-amped through a Mesa/Boogie Mark I (CALI CRUNCH) on a 1x12, light delay. SCN3: Big Muff + Phase 90 (slow) for the single-note fills. Strat bridge for SCN1/SCN3, neck pickup (or a P90/humbucker neck) for SCN2.",
+  "order": ["GATE", "CMP", "EFX", "AMP", "IR", "EQ", "MOD", "DLY", "RVB", "PL"],
+  "blocks": {
+    "GATE": {"model": "NR", "on": true, "params": {"SENS": 10, "DECAY": 50}},
+    "CMP": {"model": "RED COMP", "on": true, "params": {"OUTPUT": 62, "SENSITIVITY": 40}},
+    "EFX": {"model": "MUF DIST", "on": false, "params": {"VOLUME": 50, "TONE": 35, "SUSTAIN": 70}},
+    "AMP": {"model": "TWIN RVB", "on": true, "params": {"GAIN": 30, "BRIGHT": 1, "LEVEL": 72, "BASS": 42, "MIDDLE": 50, "TREB": 62}},
+    "IR": {"model": "TWIN 212", "on": true, "params": {"MIC": "SM57", "MIC_POS": "MIDDLE", "LEVEL": "0db", "LOW_CUT": "100hz", "HIGH_CUT": "9khz"}},
+    "EQ": {"model": "10-EQ", "on": false},
+    "MOD": {"model": "PH 90", "on": false, "params": {"SPEED": 10}},
+    "DLY": {"model": "DIGI DELAY", "on": false, "params": {"E.LEVEL": 18, "F.BACK": 20, "D.TIME": 37, "SUBDIV": "1/4"}},
+    "RVB": {"model": "PLATE", "on": true, "params": {"DECAY": 25, "LEVEL": 12}},
+    "PL": {"params": {"LEVEL": 50, "MIN": 25, "MAX": 100}}
+  },
+  "scenes": {
+    "2": {"blocks": {
+      "GATE": {"params": {"SENS": 25, "DECAY": 65}},
+      "CMP": {"model": "STUDIO COMP", "on": true, "params": {"THR": 60, "RATIO": 65, "GAIN": 40, "RELEASE": 35}},
+      "AMP": {"model": "CALI CRUNCH", "on": true, "params": {"GAIN": 58, "PRES": 45, "LEVEL": 72, "BASS": 50, "MIDDLE": 66, "TREB": 55}},
+      "IR": {"model": "CALI 112", "on": true, "params": {"MIC": "SM57", "MIC_POS": "MIDDLE", "LEVEL": "0db", "LOW_CUT": "90hz", "HIGH_CUT": "7khz"}},
+      "DLY": {"model": "DIGI DELAY", "on": true, "params": {"E.LEVEL": 15, "F.BACK": 18, "D.TIME": 37, "SUBDIV": "1/4"}},
+      "RVB": {"params": {"DECAY": 35, "LEVEL": 18}}
+    }},
+    "3": {"blocks": {
+      "GATE": {"params": {"SENS": 25, "DECAY": 55}},
+      "CMP": {"model": "RED COMP", "on": false},
+      "EFX": {"model": "MUF DIST", "on": true, "params": {"VOLUME": 50, "TONE": 35, "SUSTAIN": 70}},
+      "AMP": {"params": {"GAIN": 25, "LEVEL": 66}},
+      "MOD": {"model": "PH 90", "on": true, "params": {"SPEED": 10}}
+    }}
+  }
+}
